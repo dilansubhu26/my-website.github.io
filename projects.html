@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects - Dilan Subhu Veerappan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+</head>
+<body>
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="certifications.html">My Certifications</a>
+      <a href="cca-accomplishments.html">CCA Accomplishments</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <h2 class="projects-title">My Projects</h2>
+    <div style="margin:32px 0 32px 0; text-align:center; color:#4a4e69; font-size:1.15em;">
+      <p>Welcome to my project showcase! Each project below highlights my passion for technology, problem-solving, and innovation. Feel free to explore and download the resources to see my work in action.</p>
+    </div>
+    <div class="projects-scroll">
+      <div class="project-card">
+        <h3>Explanation of some of my projects</h3>
+        <p>This document provides an overview and explanation of selected projects, including their objectives, implementation, and outcomes.</p>
+        <a href="../Dilan Subhu Veerappan - Project Showcase.pdf" download class="download-btn">Download Project Explanation PDF</a>
+      </div>
+      <div class="project-card">
+        <h3>Dilan June 2025 Python Projects</h3>
+        <p>A collection of Python projects developed in June 2025, showcasing a range of programming concepts and practical applications.</p>
+        <a href="../Dilan June 2025 Python Projects.zip" download class="download-btn">Download Python Project Files</a>
+      </div>
+      <div class="project-card">
+        <h3>Swift Accelerator Programme (SAP)</h3>
+        <p>A comprehensive compilation of projects completed during the Swift Accelerator Programme, demonstrating proficiency in Swift and iOS development.</p>
+        <a href="../SAP Challenge 1 - 7PM.zip" download class="download-btn">Download Swift Accelerator Projects</a>
+      </div>
+      <div class="project-card">
+        <h3>Swift Accelerator Projects Compiled</h3>
+        <p>A complete archive of all projects compiled during the Swift Accelerator Programme, including advanced iOS app development work.</p>
+        <a href="../Swift Accelerator Projects Compiled.zip" download class="download-btn">Download Compiled Swift Projects</a>
+      </div>
+      <div class="project-card">
+        <h3>June Conference B20</h3>
+        <p>Project files and resources from the June Conference B20, including presentations and code samples.</p>
+        <a href="../June Conference B20 copy.zip" download class="download-btn">Download Conference Resources</a>
+      </div>
+    </div>
+    <div style="margin:32px 0 0 0; text-align:center; color:#4a4e69; font-size:1.08em;">
+      <p>Many more projects that I have worked on are being added to my <a href="https://github.com/Dilanthenerd26" target="_blank" style="color:#2563eb; text-decoration:underline;">GitHub</a>.</p>
+    </div>
+    <footer>
+      <p>More projects coming soon!</p>
+    </footer>
+  </div>
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('customCursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, .contact-btn, .project-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(1.4)');
+      el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+    });
+  </script>
+</body>
+</html>

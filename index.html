@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dilan Subhu Veerappan - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+  <!-- Custom fonts for fallback -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="certifications.html">My Certifications</a>
+      <a href="cca-accomplishments.html">CCA Accomplishments</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <!-- Background music and click sound controls -->
+    <div style="margin-bottom: 20px;">
+      <button id="music-toggle" class="contact-btn">Play Music</button>
+      <audio id="bg-music" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b5b7b6b7.mp3"></audio>
+      <audio id="click-sound" src="mouse-clicks-6849.mp3"></audio>
+      <audio controls>
+        <source src="mouse-clicks-6849.mp3"type="audio/mp3"></audio>
+      </audio>
+    </div>
+    <!-- Hero/Header -->
+    <header class="hero">
+      <img src="Untitled_Artwork.png" alt="Dilan Subhu Veerappan" class="avatar">
+      <div>
+        <h1>Hey there, I'm Dilan Subhu Veerappan!</h1>
+        <p class="subtitle">I like to build random things!</p>
+        <p class="desc">I'm a 16-year-old student from Singapore with a passion for technology, learning, and creative problem-solving. I enjoy building projects that challenge me and help me grow as a developer and learner.</p>
+        <div class="socials">
+          <div class="email-dropdown" style="display:inline-block; position:relative;">
+            <button class="contact-btn" id="emailDropdownBtn" style="margin-right:8px;">Email</button>
+            <div id="emailDropdownMenu" style="display:none; position:absolute; left:0; top:110%; background:#fff; border:1px solid #a78bfa; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); min-width:180px; z-index:10;">
+              <a href="mailto:dilan.subhu@gmail.com" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">Default Mail App</a>
+              <a href="https://mail.google.com/mail/?view=cm&to=dilan.subhu@gmail.com" target="_blank" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">Gmail</a>
+              <a href="https://mail.yahoo.com/?compose=new&to=dilan.subhu@gmail.com" target="_blank" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">Yahoo Mail</a>
+              <a href="https://www.icloud.com/mail/compose?to=dilan.subhu@gmail.com" target="_blank" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">iCloud Mail</a>
+            </div>
+          </div>
+          <a href="https://x.com/DilanSubhu" target="_blank">Twitter</a>
+          <a href="https://github.com/Dilanthenerd26" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Animated About -->
+    <section>
+      <div class="intro-card">
+        <h2 class="intro-hello"></h2>
+        <div class="intro-details" style="display:none;">
+          <p>I'm a young passionate software developer and tech enthusiast studying in Singapore. Welcome to my GitHub profile!</p>
+          <ul>
+            <li>🌱 I’m currently learning through mainly Udemy courses to become a great software engineer.</li>
+            <li>👯 I’m looking to collaborate on innovative and impactful projects.</li>
+            <li>📫 How to reach me: <a href="mailto:dilan.subhu@gmail.com">dilan.subhu@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section>
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <div>
+            <h3>Swift Accelerator Class of 2025</h3>
+          </div>
+        </div>
+        <div class="experience-item">
+          <div>
+            <h3>June Conference Beginner Track June 2025</h3>
+          </div>
+        </div>
+        <div class="experience-item">
+          <div>
+            <h3>Keepsake Website Development Project 2025 June</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Congrats you've reached the end of this page!</p>
+    </footer>
+  </div>
+  <canvas id="confetti-canvas"></canvas>
+  <audio id="confetti-audio" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae5b2.mp3"></audio>
+  <script>
+    // Typewriter effect for About
+    const helloText = "Just a short intro of me:";
+    const helloElem = document.querySelector('.intro-hello');
+    const detailsElem = document.querySelector('.intro-details');
+    let i = 0;
+    function typeWriter() {
+      if (i < helloText.length) {
+        helloElem.textContent += helloText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+      } else {
+        detailsElem.style.display = 'block';
+      }
+    }
+    window.addEventListener('DOMContentLoaded', typeWriter);
+
+    // Background music play/pause
+    const music = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-toggle');
+    let musicPlaying = false;
+    musicBtn.addEventListener('click', () => {
+      if (!musicPlaying) {
+        music.play();
+        musicBtn.textContent = 'Pause Music';
+        musicPlaying = true;
+      } else {
+        music.pause();
+        musicBtn.textContent = 'Play Music';
+        musicPlaying = false;
+      }
+    });
+
+    // Click sound effect for links and buttons
+    const clickSound = document.getElementById('click-sound');
+    document.querySelectorAll('a, .contact-btn').forEach(el => {
+      el.addEventListener('click', () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
+    });
+
+    // Confetti effect: upward, crossing from both sides
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const ctx = confettiCanvas.getContext('2d');
+    let confettiActive = false;
+    function resizeCanvas() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function randomColor() {
+      const colors = ['#f87171','#fbbf24','#34d399','#60a5fa','#a78bfa','#f472b6','#facc15'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+    function ConfettiParticle(x, y, side) {
+      this.x = x;
+      this.y = y;
+      this.r = Math.random() * 6 + 4;
+      this.color = randomColor();
+      this.speed = Math.random() * 2 + 2;
+      // Cross: left goes right-up, right goes left-up
+      this.angle = side === 'left'
+        ? -Math.PI / 2 + (Math.random() * Math.PI / 6) + Math.PI / 8 // slightly right
+        : -Math.PI / 2 - (Math.random() * Math.PI / 6) - Math.PI / 8; // slightly left
+      this.alpha = 1;
+      this.update = function() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed;
+        this.alpha -= 0.012;
+      };
+      this.draw = function(ctx) {
+        ctx.globalAlpha = Math.max(this.alpha, 0);
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      };
+    }
+    let confettiParticles = [];
+    function burstConfetti() {
+      confettiParticles = [];
+      const h = window.innerHeight;
+      for (let i = 0; i < 30; i++) {
+        confettiParticles.push(new ConfettiParticle(0, h-40, 'left'));
+        confettiParticles.push(new ConfettiParticle(window.innerWidth, h-40, 'right'));
+      }
+      confettiActive = true;
+      document.getElementById('confetti-audio').play();
+      animateConfetti();
+    }
+    function animateConfetti() {
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      confettiParticles.forEach(p => {
+        p.update();
+        p.draw(ctx);
+      });
+      confettiParticles = confettiParticles.filter(p => p.alpha > 0);
+      if (confettiParticles.length > 0) {
+        requestAnimationFrame(animateConfetti);
+      } else {
+        confettiActive = false;
+      }
+    }
+    // Detect scroll to bottom
+    window.addEventListener('scroll', () => {
+      if (confettiActive) return;
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+        burstConfetti();
+      }
+    });
+
+    // Custom cursor
+    const cursor = document.getElementById('customCursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, .contact-btn, .project-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(1.4)');
+      el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+    });
+
+    // Email dropdown logic
+    const emailBtn = document.getElementById('emailDropdownBtn');
+    const emailMenu = document.getElementById('emailDropdownMenu');
+    emailBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      emailMenu.style.display = emailMenu.style.display === 'block' ? 'none' : 'block';
+    });
+    document.addEventListener('click', () => {
+      emailMenu.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
