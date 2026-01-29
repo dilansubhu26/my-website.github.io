@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - Dilan Subhu Veerappan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+</head>
+<body>
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="certifications.html">My Certifications</a>
+      <a href="cca-accomplishments.html">CCA Accomplishments</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-card">
+      <p>Want to work together or just say hi?</p>
+      <div class="email-dropdown" style="display:inline-block; position:relative;">
+        <button class="contact-btn" id="emailDropdownBtn" style="margin-bottom:10px;">Contact via Email</button>
+        <div id="emailDropdownMenu" style="display:none; position:absolute; left:0; top:110%; background:#fff; border:1px solid #a78bfa; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); min-width:180px; z-index:10;">
+          <a href="mailto:dilan.subhu@gmail.com" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">Default Mail App</a>
+          <a href="https://mail.google.com/mail/?view=cm&to=dilan.subhu@gmail.com" target="_blank" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">Gmail</a>
+          <a href="https://mail.yahoo.com/?compose=new&to=dilan.subhu@gmail.com" target="_blank" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">Yahoo Mail</a>
+          <a href="https://www.icloud.com/mail/compose?to=dilan.subhu@gmail.com" target="_blank" style="display:block; padding:10px 18px; color:#2563eb; text-decoration:none;">iCloud Mail</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Let's build something awesome together!</p>
+    </footer>
+  </div>
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('customCursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, .contact-btn, .project-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(1.4)');
+      el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+    });
+    // Email dropdown logic
+    const emailBtn = document.getElementById('emailDropdownBtn');
+    const emailMenu = document.getElementById('emailDropdownMenu');
+    emailBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      emailMenu.style.display = emailMenu.style.display === 'block' ? 'none' : 'block';
+    });
+    document.addEventListener('click', () => {
+      emailMenu.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
